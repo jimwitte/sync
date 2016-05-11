@@ -23,6 +23,8 @@ RUN apt-get update && \
 # Enable SSL
 # RUN a2enmod ssl && a2ensite default-ssl # if using proxy, don't need actually secure connection
 
+VOLUME ["/var/www/html"]
+
 CMD ["/etc/apache2/foreground.sh"]
 
 
