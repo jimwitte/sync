@@ -7,6 +7,9 @@ EXPOSE 80 443
 # Let the container know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive
 
+VOLUME ["/var/www/html"]
+ADD ./app /var/www/html
+
 ADD ./foreground.sh /etc/apache2/foreground.sh
 
 RUN apt-get update && \
@@ -20,8 +23,6 @@ RUN apt-get update && \
 # Enable SSL
 # RUN a2enmod ssl && a2ensite default-ssl # if using proxy, don't need actually secure connection
 
-VOLUME ["/var/www/html"]
-ADD ./app /var/www/html
 
 CMD ["/etc/apache2/foreground.sh"]
 
