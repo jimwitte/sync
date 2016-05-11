@@ -14,8 +14,8 @@ RUN apt-get update && \
 		php5-gd libapache2-mod-php5 postfix wget supervisor php5-pgsql curl libcurl3 \
 		libcurl3-dev php5-curl php5-xmlrpc php5-intl php5-mysql git-core && \
 	cd /tmp && \
-	git clone https://github.com/jimwitte/sync.git && \
-	mv /tmp/sync/* /var/www/html/ && \
+	git clone https://github.com/jimwitte/hammurabi.git && \
+	mv /tmp/hammurabi/* /var/www/html/ && \
 	rm /var/www/html/index.html && \
 	chown -R www-data:www-data /var/www/html && \
 	chmod +x /etc/apache2/foreground.sh
