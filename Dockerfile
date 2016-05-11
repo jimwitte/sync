@@ -18,6 +18,11 @@ RUN apt-get update && \
 		libcurl3-dev php5-curl php5-xmlrpc php5-intl php5-mysql git-core && \
 	rm /var/www/html/index.html && \
 	chown -R www-data:www-data /var/www/html && \
+	mkdir /var/www/html/views/configs && \
+	mkdir /var/www/html/views/cache && \
+	mkdir /var/www/html/views/templates_c && \
+	chmod a+w /var/www/html/views/cache -R && \
+	chmod a+w /var/www/html/views/templates_c -R && \
 	chmod +x /etc/apache2/foreground.sh
 
 # Enable SSL
